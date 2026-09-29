@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rovistino</title>
+  <meta name="description" content="Bot Telegram gratuito che cerca annunci dell'usato su Subito e Wallapop. Scrivi cosa cerchi, ricevi foto, prezzo e link.">
+  <meta property="og:title" content="Rovistino">
+  <meta property="og:description" content="Scrivi cosa cerchi, Rovistino rovista tra Subito e Wallapop per te.">
+  <meta property="og:image" content="https://leixien.github.io/rovistino/assets/description.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏷️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./">Rovistino</a>
+      <div class="actions"><a href="https://t.me/RovistinoBot">@RovistinoBot</a></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <h1>Rovista tra gli annunci dell'usato al posto tuo.</h1>
+        <p class="lede">Scrivi su Telegram cosa cerchi, con le tue parole. Rovistino cerca su Subito e Wallapop e ti manda gli annunci più recenti, con foto, prezzo e link.</p>
+        <a class="button" href="https://t.me/RovistinoBot">Apri su Telegram</a>
+      </div>
+
+      <div class="chat" aria-label="Esempio di conversazione con il bot">
+        <p class="bubble me">ps5 sotto i 300 euro a Milano</p>
+        <p class="bubble">Cerco: ps5 · max 300 € · Milano 30 km</p>
+        <ul class="tags" role="list">
+          <li class="tag"><span><b>PS5 standard con 2 controller</b><span class="where">Subito · Milano</span></span><span class="price">270€</span></li>
+          <li class="tag"><span><b>PlayStation 5 digital, come nuova</b><span class="where">Wallapop · Sesto San Giovanni</span></span><span class="price">240€</span></li>
+          <li class="tag"><span><b>PS5 + 3 giochi</b><span class="where">Subito · Monza</span></span><span class="price">299€</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>Come si usa</h2>
+        <ol class="steps">
+          <li><h3>Apri il bot</h3><p>Cerca <a href="https://t.me/RovistinoBot">@RovistinoBot</a> su Telegram e premi Avvia.</p></li>
+          <li><h3>Scrivi cosa cerchi</h3><p>Una frase normale, come la scriveresti a un amico. Il bot ti dice come l'ha capita.</p></li>
+          <li><h3>Guarda gli annunci</h3><p>Arrivano 10 alla volta, dal più nuovo. Premi Altri per vederne altri.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Cosa capisce</h2>
+        <table>
+          <thead><tr><th>Scrivi</th><th>Il bot cerca</th></tr></thead>
+          <tbody>
+            <tr><td><code>sotto i 300</code>, <code>max 300</code></td><td>prezzo massimo 300 €</td></tr>
+            <tr><td><code>sopra i 100</code>, <code>da 100 euro</code></td><td>prezzo minimo 100 €</td></tr>
+            <tr><td><code>tra 100 e 200</code></td><td>prezzo tra 100 e 200 €</td></tr>
+            <tr><td><code>a Milano</code>, <code>zona Milano</code></td><td>annunci vicino a Milano</td></tr>
+            <tr><td><code>entro 20 km</code></td><td>raggio di 20 km (se non lo scrivi, 30)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Da accendere se ti servono</h2>
+        <p class="prose">Sono tutte spente all'inizio. Le accendi e le spegni dal comando <code>/funzioni</code>.</p>
+        <dl class="features">
+          <div><dt>Ricerca ripetuta</dt><dd>Ripete una ricerca ogni tot minuti e ti manda solo gli annunci nuovi.</dd></div>
+          <div><dt>Avviso ribassi</dt><dd>Ti avvisa quando un annuncio già visto abbassa il prezzo.</dd></div>
+          <div><dt>Sotto la media</dt><dd>Segna gli annunci più economici della media per quella ricerca.</dd></div>
+          <div><dt>Parole escluse</dt><dd>Scarta gli annunci con parole come "rotto" o "ricambi".</dd></div>
+          <div><dt>Riepilogo</dt><dd>Un solo messaggio all'orario che scegli, invece di uno per annuncio.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap"><div class="prose">
+        <h2>Cosa non fa</h2>
+        <p>Rovistino cerca e basta. Non compra, non scrive ai venditori e non ti chiede di accedere ai tuoi account su Subito o Wallapop. È gratuito e non mostra pubblicità.</p>
+        <p>Per cancellare tutto quello che il bot ha salvato su di te, scrivigli <code>/cancella</code>. I dettagli sono nella <a href="privacy.html">privacy policy</a>.</p>
+      </div></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="https://t.me/RovistinoBot">@RovistinoBot su Telegram</a>
+      <a href="privacy.html">Privacy policy</a>
+      <span>Rovistino non è collegato a Subito, Wallapop o Vinted.</span>
+    </div>
+  </footer>
+</body>
+</html>

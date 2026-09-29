@@ -1,0 +1,199 @@
+:root {
+  --bg: #e7eef2;
+  --ink: #17293a;
+  --muted: #4d6273;
+  --line: #b9c8d3;
+  --tag: #ecd09a;
+  --tag-edge: #c9a664;
+  --sticker: #ff6a2b;
+  --bubble: #ffffff;
+  --bubble-me: #cfe3f5;
+  --focus: #1f6fd1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14222f;
+    --ink: #e4edf3;
+    --muted: #9fb3c3;
+    --line: #2e4254;
+    --tag: #d9bb80;
+    --tag-edge: #a8874c;
+    --bubble: #1e3142;
+    --bubble-me: #26496a;
+    --focus: #7db4ff;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 1.125rem/1.6 "Atkinson Hyperlegible", system-ui, sans-serif;
+  /* layout follows body width, not the window, so the view switch can narrow it */
+  container-type: inline-size;
+}
+
+/* forced phone view on a wide screen */
+html[data-view="mobile"] { background: var(--line); }
+html[data-view="mobile"] body { max-width: 26rem; margin: 0 auto; min-height: 100vh; }
+
+/* view switch + first-visit tip */
+header.top .actions { display: flex; align-items: center; gap: 1rem; position: relative; }
+.view-switch {
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--bubble);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+/* the hero button already links the bot on narrow screens */
+@container (max-width: 30rem) { header.top .actions > a { display: none; } }
+.view-switch:focus-visible, .tip button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.tip {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  z-index: 1;
+  width: min(18rem, calc(100cqi - 2rem));
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.tip::before {
+  content: "";
+  position: absolute;
+  top: -0.4rem;
+  right: 2rem;
+  border: 0.4rem solid transparent;
+  border-top: 0;
+  border-bottom-color: var(--ink);
+}
+.tip p { margin: 0 0 0.75rem; }
+.tip button {
+  font: inherit;
+  font-weight: 700;
+  background: var(--bg);
+  color: var(--ink);
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+}
+
+a { color: inherit; text-underline-offset: 0.2em; }
+a:focus-visible, .button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+.wrap { max-width: 68rem; margin: 0 auto; padding: 0 1rem; }
+.prose { max-width: 40rem; }
+
+header.top { padding: 1.5rem 0; }
+header.top .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.brand { font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+
+h1 { font-size: clamp(2.4rem, 6cqi, 4rem); line-height: 1.05; margin: 0 0 1.25rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 1rem; }
+h3 { font-size: 1.125rem; margin: 0 0 0.25rem; }
+p { margin: 0 0 1rem; }
+
+.button {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* hero */
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: 2rem 1rem 4rem; }
+.hero .lede { font-size: 1.25rem; color: var(--muted); max-width: 30rem; }
+@container (max-width: 52rem) { .hero { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* chat demo */
+.chat { display: flex; flex-direction: column; gap: 0.75rem; }
+.bubble {
+  background: var(--bubble);
+  border-radius: 1.1rem 1.1rem 1.1rem 0.3rem;
+  padding: 0.6rem 0.9rem;
+  max-width: 85%;
+  font-size: 1rem;
+}
+.bubble.me { align-self: flex-end; background: var(--bubble-me); border-radius: 1.1rem 1.1rem 0.3rem 1.1rem; }
+
+/* listing as a price tag on a string */
+.tags { display: flex; flex-direction: column; gap: 0.9rem; padding-left: 0.5rem; }
+.tag {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  background: var(--tag);
+  color: #2a2113;
+  padding: 0.7rem 1rem 0.7rem 2.4rem;
+  clip-path: polygon(1.4rem 0, 100% 0, 100% 100%, 1.4rem 100%, 0 50%);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+.tag::before {
+  content: "";
+  position: absolute;
+  left: 0.9rem; top: 50%;
+  width: 0.55rem; height: 0.55rem;
+  margin-top: -0.275rem;
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 2px var(--tag-edge);
+}
+.tag:nth-child(2) { transform: rotate(-1.2deg); margin-left: 0.6rem; }
+.tag:nth-child(3) { transform: rotate(0.8deg); }
+.tag b { display: block; font-size: 1rem; }
+.tag .where { color: #5b4a2c; }
+.price {
+  font-family: "Caveat Brush", cursive;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #fff;
+  background: var(--sticker);
+  border-radius: 50%;
+  width: 4.2rem; height: 4.2rem;
+  display: grid; place-items: center;
+  transform: rotate(-8deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .chat > * { animation: arrive 0.35s ease-out backwards; }
+  .chat > :nth-child(2) { animation-delay: 0.5s; }
+  .chat > :nth-child(3) { animation-delay: 1s; }
+  @keyframes arrive { from { opacity: 0; transform: translateY(0.5rem); } }
+}
+
+/* sections */
+section { padding: 3rem 0; border-top: 1px solid var(--line); }
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.steps li { counter-increment: step; }
+.steps li::before { content: counter(step); display: block; font-family: "Caveat Brush", cursive; font-size: 2.4rem; line-height: 1; color: var(--sticker); margin-bottom: 0.4rem; }
+@container (max-width: 52rem) { .steps { grid-template-columns: 1fr; gap: 1.25rem; } }
+
+table { border-collapse: collapse; width: 100%; max-width: 40rem; font-size: 1rem; }
+th, td { text-align: left; padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 700; }
+code { white-space: nowrap; font-size: 0.95em; background: var(--bubble); padding: 0.1em 0.35em; border-radius: 0.3em; }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1.5rem 2rem; margin: 0; }
+.features dt { font-weight: 700; }
+.features dd { margin: 0; color: var(--muted); }
+
+footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 1rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }

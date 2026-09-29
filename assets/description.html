@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>description picture</title>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    :root { --bg: #e7eef2; --ink: #17293a; --muted: #4d6273; --bubble: #fff; --bubble-me: #cfe3f5; }
+    html, body { width: 640px; height: 360px; overflow: hidden; margin: 0; }
+    .card { display: grid; grid-template-columns: 230px 1fr; gap: 24px; align-items: center; height: 100%; padding: 0 30px; }
+    .card h1 { font-size: 40px; margin: 0 0 10px; }
+    .card p { font-size: 17px; color: var(--muted); margin: 0; line-height: 1.4; }
+    .chat { gap: 9px; }
+    .chat > * { animation: none !important; }
+    .bubble { font-size: 14px; padding: 7px 11px; white-space: nowrap; max-width: none; }
+    .tags { gap: 8px; }
+    .tag { font-size: 12.5px; padding: 6px 10px 6px 30px; }
+    .tag b { font-size: 13px; }
+    .price { width: 50px; height: 50px; font-size: 22px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <h1>Rovistino</h1>
+      <p>Scrivi cosa cerchi. Ti mando gli annunci dell'usato da Subito e Wallapop.</p>
+    </div>
+    <div class="chat">
+      <p class="bubble me">ps5 sotto i 300 euro a Milano</p>
+      <p class="bubble">Cerco: ps5 · max 300 € · Milano 30 km</p>
+      <ul class="tags">
+        <li class="tag"><span><b>PS5 standard con 2 controller</b><span class="where">Subito · Milano</span></span><span class="price">270€</span></li>
+        <li class="tag"><span><b>PlayStation 5 digital</b><span class="where">Wallapop · Sesto S.G.</span></span><span class="price">240€</span></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
