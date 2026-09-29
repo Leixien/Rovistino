@@ -4,4 +4,4 @@ Sito e privacy policy di [@RovistinoBot](https://t.me/RovistinoBot), il bot Tele
 dell'usato su Subito, Wallapop e Vinted.
 
 Online su [leixien.github.io/Rovistino](https://leixien.github.io/Rovistino/). Autore:
-[@cringejon](https://t.me/cringejon) su Telegram.
+[@cringejon](https://t.me/cringejon) su Telegram. Se ti è utile: [offrimi un caffè](https://ko-fi.com/cringejon).
