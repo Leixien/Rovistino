@@ -18,6 +18,23 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏷️</text></svg>">
   <link rel="stylesheet" href="style.css">
   <script src="site.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Rovistino",
+    "alternateName": "@RovistinoBot",
+    "description": "Bot Telegram gratuito che cerca annunci dell'usato su Subito, Wallapop e Vinted per prezzo, città e distanza, con ricerche ripetute e avviso ribassi.",
+    "url": "https://leixien.github.io/Rovistino/",
+    "installUrl": "https://t.me/RovistinoBot",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Telegram",
+    "inLanguage": "it",
+    "image": "https://leixien.github.io/Rovistino/assets/description.png",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "author": { "@type": "Person", "name": "Leixien", "url": "https://github.com/Leixien" }
+  }
+  </script>
 </head>
 <body>
   <header class="top">
@@ -85,6 +102,24 @@
           <div><dt>Riepilogo</dt><dd>Un solo messaggio all'orario che scegli, invece di uno per annuncio.</dd></div>
         </dl>
       </div>
+    </section>
+
+    <section>
+      <div class="wrap"><div class="prose">
+        <h2>Domande frequenti</h2>
+        <h3>Come ricevo un avviso quando esce un nuovo annuncio su Subito, Wallapop o Vinted?</h3>
+        <p>Accendi «Ricerca ripetuta» in <code>/funzioni</code>, poi scrivi per esempio <code>/ripeti ps5 max 300 a Milano ogni 15</code>. Il bot ripete la ricerca ogni 15 minuti (il minimo è 5) e ti scrive solo quando trova annunci nuovi.</p>
+        <h3>Posso cercare su Subito, Wallapop e Vinted insieme?</h3>
+        <p>Sì: una sola frase cerca su tutti e tre e ti mostra i risultati più recenti insieme. Con <code>/siti</code> scegli su quali cercare.</p>
+        <h3>Mi avvisa se un annuncio abbassa il prezzo?</h3>
+        <p>Sì, con «Avviso ribassi»: se un annuncio già visto da una ricerca ripetuta scende di prezzo, ricevi «Ribasso: 120 € → 95 €».</p>
+        <h3>Come cerco solo vicino a me?</h3>
+        <p>Scrivi la città e, se vuoi, il raggio: <code>bici a Torino entro 20 km</code>. Senza raggio uso 30 km. Vinted spedisce in tutta Italia, quindi lì la città non conta.</p>
+        <h3>Posso escludere gli annunci di ricambi o oggetti rotti?</h3>
+        <p>Sì, con «Parole escluse»: <code>iphone 13 senza rotto, ricambi</code> scarta gli annunci con quelle parole nel titolo.</p>
+        <h3>Costa qualcosa? Serve un account su Subito o Vinted?</h3>
+        <p>No. Il bot è gratuito, senza pubblicità, e non ti chiede di accedere a nessun sito: ti serve solo Telegram.</p>
+      </div></div>
     </section>
 
     <section>

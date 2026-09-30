@@ -189,7 +189,8 @@ section { padding: 3rem 0; border-top: 1px solid var(--line); }
 table { border-collapse: collapse; width: 100%; max-width: 40rem; font-size: 1rem; }
 th, td { text-align: left; padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font-weight: 700; }
-code { white-space: nowrap; font-size: 0.95em; background: var(--bubble); padding: 0.1em 0.35em; border-radius: 0.3em; }
+td code { white-space: nowrap; }
+code { font-size: 0.95em; background: var(--bubble); padding: 0.1em 0.35em; border-radius: 0.3em; }
 
 .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1.5rem 2rem; margin: 0; }
 .features dt { font-weight: 700; }
