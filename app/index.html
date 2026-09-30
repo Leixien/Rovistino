@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Rovistino</title>
+  <meta name="description" content="Cerca annunci dell'usato su Subito, Wallapop e Vinted da una frase.">
+  <meta name="theme-color" content="#e7eef2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14222f" media="(prefers-color-scheme: dark)">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Rovistino">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <form class="search" role="search">
+      <label class="visually-hidden" for="q">Cosa cerchi?</label>
+      <input id="q" name="q" type="search" placeholder="es. ps5 max 300 a Milano"
+             autocomplete="off" autocapitalize="off" enterkeyhint="search" maxlength="200" required>
+      <button type="submit">Cerca</button>
+    </form>
+    <div class="sites" role="group" aria-label="Dove cercare">
+      <button type="button" data-site="Subito" aria-pressed="true">Subito</button>
+      <button type="button" data-site="Wallapop" aria-pressed="true">Wallapop</button>
+      <button type="button" data-site="Vinted" aria-pressed="true">Vinted</button>
+    </div>
+  </header>
+
+  <div id="install" class="install" hidden></div>
+
+  <main>
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <section id="welcome" class="welcome">
+      <h1>Rovista tra gli annunci dell'usato.</h1>
+      <p>Scrivi cosa cerchi con le tue parole: prezzo, città e raggio li capisco da solo.</p>
+      <div class="examples">
+        <button type="button">ps5 sotto i 300 euro a Milano</button>
+        <button type="button">bici da corsa max 400 zona Torino 20</button>
+        <button type="button">iphone 13 senza rotto, ricambi</button>
+        <button type="button">divano tra 100 e 300 a Bologna</button>
+      </div>
+      <p class="small">Cerco e basta: non compro e non scrivo ai venditori. Anche su Telegram:
+        <a href="https://t.me/RovistinoBot">@RovistinoBot</a>.</p>
+    </section>
+
+    <ol id="results" class="results"></ol>
+    <button id="more" class="more" type="button" hidden></button>
+  </main>
+
+  <footer class="foot">
+    <a href="../">Rovistino</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="https://ko-fi.com/cringejon">Offrimi un caffè</a>
+  </footer>
+</body>
+</html>
