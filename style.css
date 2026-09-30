@@ -195,5 +195,8 @@ code { white-space: nowrap; font-size: 0.95em; background: var(--bubble); paddin
 .features dt { font-weight: 700; }
 .features dd { margin: 0; color: var(--muted); }
 
+/* Ko-fi donation widget (its content is white, so it keeps a light frame in dark mode too) */
+.kofi { display: block; width: 100%; border: none; padding: 4px; background: #f9f9f9; border-radius: 0.8rem; margin: 1.5rem 0; }
+
 footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 1rem; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
